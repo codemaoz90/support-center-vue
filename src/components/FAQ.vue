@@ -24,7 +24,9 @@
 </template>
 
 <script>
+import RemoteData from "../mixins/RemoteData"
 export default {
+  mixins: [RemoteData],
   data() {
     return {
       questions: [],
@@ -35,6 +37,7 @@ export default {
   created() {
     // fetch url jsonplacholder to return fake data =)
     this.loading = true
+    this.remoteDataLoading = 45
     setTimeout(async () => {
       this.loading = true
       try {
